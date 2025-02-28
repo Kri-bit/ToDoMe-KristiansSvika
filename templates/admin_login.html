@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Pieslēgšanās</title>
+</head>
+<body>
+    <h2>Admin Pieslēgšanās</h2>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="error">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <label for="lietotajvards">Lietotājvārds:</label>
+        <input type="text" id="lietotajvards" name="lietotajvards" required><br>
+        <label for="parole">Parole:</label>
+        <input type="password" id="parole" name="parole" required><br>
+        <button type="submit">Pieslēgties</button>
+    </form>
+</body>
+</html>

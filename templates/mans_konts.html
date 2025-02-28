@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mans Konts</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Sveiki, {{ lietotajvards }}!</h1>
+
+    <h2>Pievienot uzdevumu</h2>
+    <form action="/pievienot-uzdevumu" method="POST">
+        <input type="text" name="nosaukums" placeholder="Uzdevuma nosaukums" required><br>
+        <textarea name="apraksts" placeholder="Uzdevuma apraksts" required></textarea><br>
+        <select name="prioritate">
+            <option value="zems">Zems</option>
+            <option value="vidējs">Vidējs</option>
+            <option value="augsts">Augsts</option>
+        </select><br>
+        <input type="date" name="beigu_datums" required><br>
+        <button type="submit">Pievienot uzdevumu</button>
+    </form>
+
+    <h2>Mani uzdevumi</h2>
+    <div class="uzdevumu-konteiners">
+        {% for uzdevums in uzdevumi %}
+        <div class="uzdevums" {% if uzdevums[5] %}style="text-decoration: line-through;"{% endif %}>
+            <p><strong>{{ uzdevums[1] }}</strong></p>
+            <p>{{ uzdevums[2] }}</p>
+            <p>Prioritāte: {{ uzdevums[3] }}</p>
+            <p>Beigu datums: {{ uzdevums[4] }}</p>
+            <form action="/atzimet-izpilditu/{{ uzdevums[0] }}" method="POST">
+                <button type="submit" class="poga-zala">Pabeigts</button>
+            </form>
+            <form action="/dzest-uzdevumu/{{ uzdevums[0] }}" method="POST">
+                <button type="submit" class="poga-sarkana">Dzēst</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="citati-konteineris">
+        <div class="cits">
+            <p>"{{ random_cits.citats }}" - {{ random_cits.autors }}</p>
+        </div>
+    </div>
+
+    <br>
+    <form action="/atslegties" method="GET">
+        <button type="submit">Atslēgties</button>
+    </form>
+</body>
+</html>

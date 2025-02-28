@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panelis</title>
+</head>
+<body>
+    <h2>Admin Panelis</h2>
+    <p>Sveicināts, Administrators!</p>
+
+    <h3>Lietotāji</h3>
+    <ul>
+        {% for lietotajs in lietotaji %}
+        <li>
+            {{ lietotajs[1] }} ({{ lietotajs[2] }})
+            <br>
+            Pēdējā aktivitāte: {{ lietotajs[3] }}
+            <form action="{{ url_for('dzest_lietotaju', id=lietotajs[0]) }}" method="POST" style="display:inline;">
+                <button type="submit" class="poga-sarkana">Dzēst</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('admin_atslegties') }}">Atslēgties</a>
+</body>
+</html>

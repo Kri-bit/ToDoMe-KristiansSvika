@@ -1,0 +1,119 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  background-color: #1C3144;
+  margin: 250px;
+  justify-content: center;
+}
+
+h1, h2 {
+  color: #ffffff;
+  padding: 15px;
+}
+
+form {
+  background:#1a2c3c;
+  padding: 20px;
+  display: inline-block;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+input, textarea, select, button {
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  justify-content: center;
+}
+
+button, .atpakal-poga {
+  background-color: #C3D898;
+  color: black;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #a3b087;
+}
+
+.uzdevumu-konteiners {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.uzdevums {
+  width: 250px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.uzdevums p {
+  margin: 5px 0;
+}
+
+.poga-zala {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.poga-sarkana {
+  background: #F44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.poga-zala:hover {
+  background: #48754a;
+}
+
+.poga-sarkana:hover {
+  background: #8c4040;
+}
+
+.apraksts-sakums {
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  text-align: center;
+  color: #ffffff;
+  background-color: #596F62;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  margin: 100px;
+}
+
+.darbibateksts {
+  color: #ffffff;
+}
+
+.citati-konteineris {
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-style: italic;
+  text-align: center;
+  color: #ffffff;
+  background-color: #1a2c3c;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  margin: 50px;
+}
